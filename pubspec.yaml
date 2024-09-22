@@ -1,0 +1,13 @@
+name: shimmer_skeleton
+description: A custom widget that wraps a SShimmer widget and properly uses the color scheme from the theme to create a shimmer effect.
+version: 0.0.1
+repository: https://github.com/shivin307/shimmer_skeleton
+homepage: https://github.com/shivin307/shimmer_skeleton
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+#  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
