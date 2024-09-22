@@ -75,3 +75,7 @@ This package is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
+
+## Contact
+
+For collaboration, inquiries, or support, feel free to reach out to us via email: `italiya.in@gmail.com`.
