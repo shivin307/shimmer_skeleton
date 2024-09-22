@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-/// A custom widget that wraps a [SShimmer] widget
+/// A custom widget that wraps a [Shimmer] widget
 /// and properly uses the color scheme from the theme
 /// to create a shimmer effect.
 ///
 /// This widget is useful for creating a shimmer effect
 /// that is consistent with the Flutter Material theme.
-class SShimmerSkeleton extends StatelessWidget {
-  /// Creates a [SShimmerSkeleton] widget.
+class ShimmerSkeleton extends StatelessWidget {
+  /// Creates a [ShimmerSkeleton] widget.
   ///
   /// The [child] parameter must not be null.
-  const SShimmerSkeleton({
+  const ShimmerSkeleton({
     super.key,
     required this.child,
     required this.isLoading,
@@ -22,7 +22,7 @@ class SShimmerSkeleton extends StatelessWidget {
     this.enabled = true,
   });
 
-  /// The child of the [SShimmerSkeleton] widget.
+  /// The child of the [ShimmerSkeleton] widget.
   final Widget child;
 
   /// Whether the shimmer effect should be displayed.
@@ -57,7 +57,7 @@ class SShimmerSkeleton extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     if (isLoading) {
-      return SShimmer.fromColors(
+      return Shimmer.fromColors(
         baseColor: baseColor ?? theme.colorScheme.secondary.withOpacity(0.2),
         highlightColor: highlightColor ?? theme.colorScheme.primary.withOpacity(0.3),
         direction: direction,
@@ -113,10 +113,10 @@ enum ShimmerDirection { ltr, rtl, ttb, btt }
 /// * [child] should be made of basic and simple [Widget]s, such as [Container],
 /// [Row] and [Column], to avoid side effect.
 ///
-/// * use one [SShimmer] to wrap list of [Widget]s instead of a list of many [SShimmer]s
+/// * use one [Shimmer] to wrap list of [Widget]s instead of a list of many [Shimmer]s
 ///
 @immutable
-class SShimmer extends StatefulWidget {
+class Shimmer extends StatefulWidget {
   final Widget child;
   final Duration period;
   final ShimmerDirection direction;
@@ -124,7 +124,7 @@ class SShimmer extends StatefulWidget {
   final int loop;
   final bool enabled;
 
-  const SShimmer({
+  const Shimmer({
     super.key,
     required this.child,
     required this.gradient,
@@ -136,10 +136,10 @@ class SShimmer extends StatefulWidget {
 
   ///
   /// A convenient constructor provides an easy and convenient way to create a
-  /// [SShimmer] which [gradient] is [LinearGradient] made up of `baseColor` and
+  /// [Shimmer] which [gradient] is [LinearGradient] made up of `baseColor` and
   /// `highlightColor`.
   ///
-  SShimmer.fromColors({
+  Shimmer.fromColors({
     super.key,
     required this.child,
     required Color baseColor,
@@ -155,7 +155,7 @@ class SShimmer extends StatefulWidget {
             stops: const <double>[0.0, 0.35, 0.5, 0.65, 1.0]);
 
   @override
-  _SShimmerState createState() => _SShimmerState();
+  _ShimmerState createState() => _ShimmerState();
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -168,7 +168,7 @@ class SShimmer extends StatefulWidget {
   }
 }
 
-class _SShimmerState extends State<SShimmer> with SingleTickerProviderStateMixin {
+class _ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   int _count = 0;
 
@@ -193,7 +193,7 @@ class _SShimmerState extends State<SShimmer> with SingleTickerProviderStateMixin
   }
 
   @override
-  void didUpdateWidget(SShimmer oldWidget) {
+  void didUpdateWidget(Shimmer oldWidget) {
     if (widget.enabled) {
       _controller.forward();
     } else {

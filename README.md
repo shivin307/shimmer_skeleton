@@ -22,7 +22,7 @@ dependencies:
 
 ## Usage
 
-To use the `SShimmerSkeleton` widget, wrap your child widget with `SShimmerSkeleton` and control the
+To use the `ShimmerSkeleton` widget, wrap your child widget with `ShimmerSkeleton` and control the
 loading state with the `isLoading` parameter.
 
 ```dart
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Shimmer Skeleton Example')),
       body: Center(
-        child: CustomShimmer(
+        child: ShimmerSkeleton(
           isLoading: true, // Set to false when data is loaded
           child: Container(
             width: 300,
