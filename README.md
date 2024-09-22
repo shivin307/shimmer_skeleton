@@ -78,4 +78,4 @@ See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
 
 ## Contact
 
-For collaboration, inquiries, or support, feel free to reach out to us via email: `italiya.in@gmail.com`.
+For collaboration, inquiries, or support, feel free to reach out to us via email: `italiya.in@gmail.com`
